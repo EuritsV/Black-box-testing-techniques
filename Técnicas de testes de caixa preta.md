@@ -49,12 +49,12 @@ O caixa multibanco permite que o utilizador levante valores entre **10 e 1000 un
 
 ## Casos de Teste Baseados nas Partições
 
-| ID | Valor do levantamento | Partição       | Esperado                   |
-|----|--------------- -------|----------------|-------------------------------------|
-| 01 | 100                   | Válida         | levantamento autorizado                    |
-| 02 | 5                     | Inválida (abaixo do mínimo) | Erro: valor inválido   |
-| 03 | 1200                  | Inválida (acima do máximo) | Erro: valor inválido    |
-| 04 | 55                    | Inválida (não múltiplo de 10) | Erro: valor inválido |
+| ID | Valor do Levantamento | Partição        | Resultado Esperado             |
+|----|------------------------|------------------|-------------------------------|
+| 01 | 100                    | Válida           | Levantamento autorizado       |
+| 02 | 5                      | Inválida (inferior ao mínimo) | Erro: valor inválido |
+| 03 | 1200                   | Inválida (superior ao máximo) | Erro: valor inválido |
+| 04 | 55                     | Inválida (não múltiplo de 10) | Erro: valor inválido |
 
 ---
 
