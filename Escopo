@@ -1,0 +1,27 @@
+Técnicas de testes de caixa preta
+Escopo do mini-treinamento
+Definir o objetivo
+Ensinar e aplicar 3 a 5 técnicas de testes de caixa preta com exemplos reais.
+Criar um repositório no GitHub com teoria e prática aplicadas a um sistema fictício.
+Praticar didática e responsabilidade ao compartilhar conhecimento técnico.
+Apresentar teoricamente todas as técnicas e aprofundar em 2 (Equivalence Partitioning,Boundary Value Analysis ).
+Equivalence Partitioning
+Boundary Value Analysis
+Decision Table
+State Transition
+Error Guessing
+Será usado um sistema simples de caixa multibando para exercício prático.
+Estrutura do documento
+Introdução às técnicas de testes de caixa preta
+Estudo individual de cada técnica com exemplo teórico
+Exercício prático usando cenário definido (como o login ou o cadastro)
+Checklist ou modelo de como aplicar no dia a dia
+Publicação no GitHub e/ou LinkedIn com reflexão sobre o que aprendeu
+Duração
+Segunda a sexta: 1 técnica por dia.
+Fim de semana: revisão + publicação.
+Formato do conteúdo
+Markdown com diagramas no GitHub
+Slides simples no Canva ou Google Slides
+Vídeo curto (se quiser treinar comunicação)
+Post carrossel no LinkedIn
