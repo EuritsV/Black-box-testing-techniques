@@ -14,6 +14,39 @@ Este mini-treinamento tem como objetivo **demonstrar e aplicar duas técnicas de
 
 Cada partição representa um conjunto de dados que o sistema deve tratar da mesma forma — testar um valor de cada partição é suficiente para representar o comportamento de todos os outros da mesma partição.
 
+**Carateristicas principais em resumo: 
+- Reduz casos de testes mantendo uma cobertura completa
+- Se um valor numa partição funciona, outros na mesma partição deverão funcionar de forma semelhante
+- As partições não devem sobrepor-se nem estar vazias
+
+---
+## Existem vários tipos de partiçoes
+- Com base no tipo de dados:
+      - Continuas: Valores que podem incluir qualquer ponto num intervalo (incluindo decimais)
+      - Discretas: valores que só podem conter pontos especificos
+
+- Com base na organização:
+     - Ordenadas: Valores que seguem uma sequencia lógica ou hierarquica
+     - Não ordenadas: Valores sem sequencia natural
+       
+- Com base nos limites:
+     - Finitas: Conjunto limitado de valores possíveis
+     - Infinitas: Valores teoricamente ilimitados
+       
+- Com base na validade:
+     - Válidas: Valores de entrada que o sistema deve aceitar
+     - Inválidas: Valores de entrada que o sistema deve rejeitar
+
+---
+##Processo de Aplicação
+- Identificar Parâmetros de Entrada: Determinar todos os campos e parâmetros de entrada no sistema
+- Analisar Especificações: Rever os requisitos para compreender o comportamento esperado
+- Definir Partições: Dividir o domínio de entrada de cada parâmetro em partições válidas e inválidas
+- Selecionar Valores de Teste: Escolher um valor representativo de cada partição
+- Desenhar Casos de Teste: Criar testes utilizando estes valores representativos
+- Executar Testes: Executar os testes e documentar os resultados
+- Avaliar Cobertura: Calcular quantas partições foram testadas
+
 ---
 
 ## Aplicação prática: Sistema de Caixa Multibanco
