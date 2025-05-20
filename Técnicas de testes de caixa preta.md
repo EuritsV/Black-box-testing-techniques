@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Este mini-treinamento tem como objetivo **demonstrar e aplicar duas técnicas de testes de caixa preta** — *Equivalence Partitioning* e *Boundary Value Analysis* — utilizando como base um **sistema fictício de caixa multibanco (ATM)**.
+Este mini-treinamento tem como objetivo descrever as tecnicas de testes de caixa preta e **demonstrar e aplicar duas técnicas de testes de caixa preta** — *Equivalence Partitioning* e *Boundary Value Analysis* — utilizando como base um **sistema fictício de caixa multibanco (ATM)**.
 
 ---
 
@@ -108,4 +108,62 @@ O caixa multibanco permite que o utilizador levante valores entre **10 e 1000 un
 
 *Data de início:* 05/05/2025  
 *Autora:* Eurits
+
+# Dia 2 – Análise de Valores Limite (Boundary Value Analysis - BVA)
+
+## 🧠 Objetivo
+
+Este mini-treinamento tem como objetivo explorar a técnica **Boundary Value Analysis (Análise de Valores Limite - AVLim)** utilizada em testes de software para identificar erros nos limites dos domínios de entrada.
+
+---
+
+## 📘 Conceitos-Chave
+
+### O que é a Análise de Valores Limite?
+
+A Análise de Valores Limite (AVLim) é uma técnica de teste baseada no princípio de que **erros ocorrem com mais frequência nos limites dos intervalos válidos de entrada** do que no centro. 
+
+### Benefícios:
+
+✅ Mais eficiência nos testes  
+✅ Detecção de falhas críticas em condições de fronteira  
+✅ Aumento da robustez e fiabilidade do software
+
+---
+
+## 🎯 Tipos de valores a testar
+
+- 🔹 **Valor limite mínimo**
+- 🔹 **Valor limite máximo**
+- 🔹 **Valor imediatamente abaixo do mínimo**
+- 🔹 **Valor imediatamente acima do mínimo**
+- 🔹 **Valor imediatamente abaixo do máximo**
+- 🔹 **Valor imediatamente acima do máximo**
+
+---
+
+## 🧪 Exemplo prático
+
+> Um módulo de gravação aceita **números entre 10 e 500 (inclusive)**.
+
+### 🧩 Partições de equivalência:
+
+- ❌ Inválido: x < 10
+- ✅ Válido: 10 ≤ x ≤ 500
+- ❌ Inválido: x > 500
+
+---
+
+## 🧰 Métodos de Análise
+
+### ✔️ Método de 2 Valores
+
+Foca-se apenas nos valores **fora e nos limites**.
+
+**Casos de Teste**:  
+- Inferior: `9` (fora), `10` (limite inferior)  
+- Superior: `500` (limite superior), `501` (fora)
+
+```text
+Testar: 9, 10, 500, 501
 
