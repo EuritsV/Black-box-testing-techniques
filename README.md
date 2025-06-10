@@ -76,10 +76,10 @@ Este treino pode ser usado com:
 - [`decision-table.md`](decision-table.md): Tabelas de decisão
 - [`state-transition.md`](state-transition.md): Testes por transição de estado
 
-### 📂 Pasta `exemplos/` (aplicações práticas)
+### 📂 Pasta `exemplos/` (aplicações práticas) -> Em progresso, não finalizado
 
-- [`carrinho_ep.md`](exemplos/carrinho_ep.md): Validação de quantidade em carrinho (EP)
-- [`formulario_idade_bva.md`](exemplos/formulario_idade_bva.md): Validação de idade (BVA)
+- [`carrinho_ep.md`](carrinho_ep.md): Validação de quantidade em carrinho (EP)
+- [`formulario_idade_bva.md`](formulario_idade_bva.md): Validação de idade (BVA)
 - [`reservas_decision_table.md
 
 ---
