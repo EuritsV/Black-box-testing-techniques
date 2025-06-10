@@ -6,10 +6,10 @@ O **objetivo** é reduzir significativamente a quantidade de testes mantendo uma
 Se um valor numa partição for processado corretamente, assume-se que os outros valores dessa partição também o serão, permitindo testar apenas um valor representativo por partição.
 ### 🎯 Características Principais
 
-- Eficiência: Reduz drasticamente o número de testes mantendo cobertura eficiente
-- Exclusividade: Cada partição é mutuamente exclusiva (sem sobreposição ou lacunas)
-- Uniformidade: Cada partição representa um comportamento consistente do sistema
-- Representatividade: Um valor por partição é suficiente para validar todo o comportamento
+* Eficiência: Reduz drasticamente o número de testes mantendo cobertura eficiente
+* Exclusividade: Cada partição é mutuamente exclusiva (sem sobreposição ou lacunas)
+* Uniformidade: Cada partição representa um comportamento consistente do sistema
+* Representatividade: Um valor por partição é suficiente para validar todo o comportamento
 
 ### 📊 Classificação das Partições
 **Por Tipo de Dados**
