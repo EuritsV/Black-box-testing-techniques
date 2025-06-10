@@ -42,7 +42,7 @@ Este mini treino foi criado con intuito de compreender e aplicar quatro técnica
 - **Definição**: Técnica que modela e testa o comportamento de sistemas com base em estados e eventos.
 - **Importância**: Fundamental para validar fluxos (ex: autenticação, multi-passos).
 - **Aplicação prática**: Sistema de login por PIN com limite de tentativas.
-- [Ver detalhes](#-4-state-transition-transi%C3%A7%C3%A3o-de-estado)
+- [Ver detalhes](https://github.com/EuritsV/Black-box-testing-techniques/blob/main/state-transition.md#-4-state-transition-transi%C3%A7%C3%A3o-de-estado)
 
 ---
 
