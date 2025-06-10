@@ -24,19 +24,19 @@ Este mini treino foi criado con intuito de compreender e aplicar quatro técnica
 - **Definição**: Técnica que divide os dados de entrada em grupos (partições) onde se espera que todos os valores tenham o mesmo comportamento.
 - **Importância**: Reduz a quantidade de testes mantendo boa cobertura.
 - **Aplicação prática**: Validação de campo “quantidade de itens no carrinho” com faixas distintas.
-- [Ver detalhes](#-1-equivalence-partitioning-particionamento-por-equival%C3%AAncia)
+- [Ver detalhes](https://github.com/EuritsV/Black-box-testing-techniques/blob/main/equivalence-partitioning.md#-1-equivalence-partitioning-particionamento-por-equival%C3%AAncia)
 
 ### 2. Boundary Value Analysis (Análise de Valores Limite)
 - **Definição**: Técnica que testa os valores nas fronteiras das entradas válidas e inválidas.
 - **Importância**: Ajuda a detetar erros em limites de campos numéricos.
 - **Aplicação prática**: Teste de intervalo de idade num formulário (ex: 18 a 65).
-- [Ver detalhes](#-2-boundary-value-analysis-an%C3%A1lise-de-valores-limite)
+- [Ver detalhes](https://github.com/EuritsV/Black-box-testing-techniques/blob/main/boundary-value-analysis.md#-2-boundary-value-analysis-an%C3%A1lise-de-valores-limite)
 
 ### 3. Decision Table (Tabela de Decisão)
 - **Definição**: Técnica que organiza e testa múltiplas combinações de regras e condições.
 - **Importância**: Ideal para regras de negócio complexas.
 - **Aplicação prática**: Política de cancelamento de reservas com base em horas e subscrição.
-- [Ver detalhes](#-3-decision-table-tabela-de-decis%C3%A3o)
+- [Ver detalhes](https://github.com/EuritsV/Black-box-testing-techniques/blob/main/decision-table.md#-3-decision-table-tabela-de-decis%C3%A3o)
 
 ### 4. State Transition (Transição de Estado)
 - **Definição**: Técnica que modela e testa o comportamento de sistemas com base em estados e eventos.
