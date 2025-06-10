@@ -36,15 +36,15 @@ Se um valor numa partição for processado corretamente, assume-se que os outros
 ### ⚙️ Processo de Aplicação
 1. Identificação dos Parâmetros
 
-Catalogar todos os campos de entrada
-Identificar parâmetros de configuração relevantes
-Mapear dados de saída quando aplicável
+* Catalogar todos os campos de entrada
+* Identificar parâmetros de configuração relevantes
+* Mapear dados de saída quando aplicável
 
 2. Análise de Especificações
 
-Revisar requisitos funcionais
-Identificar regras de negócio
-Documentar validações esperadas
+* Revisar requisitos funcionais
+* Identificar regras de negócio
+* Documentar validações esperadas
 
 3. Definição de Partições
 
