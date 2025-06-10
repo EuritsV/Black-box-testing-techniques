@@ -1,169 +1,137 @@
 ## 🔷 1. Equivalence Partitioning (Particionamento por Equivalência)
 
-## Objetivo
+Equivalence Partitioning é uma técnica de design de testes que divide o conjunto de dados de entrada (ou saída) em partições válidas e inválidas, onde todos os valores de uma mesma partição são tratados de forma semelhante pelo sistema.
+O objetivo é reduzir significativamente a quantidade de testes mantendo uma cobertura funcional abrangente.
+Princípio Fundamental
+Se um valor numa partição for processado corretamente, assume-se que os outros valores dessa partição também o serão, permitindo testar apenas um valor representativo por partição.
+🎯 Características Principais
 
-Este mini-treinamento tem como objetivo descrever as tecnicas de testes de caixa preta e **demonstrar e aplicar duas técnicas de testes de caixa preta** — *Equivalence Partitioning* e *Boundary Value Analysis* — utilizando como base um **sistema fictício de caixa multibanco (ATM)**.
+Eficiência: Reduz drasticamente o número de testes mantendo cobertura eficiente
+Exclusividade: Cada partição é mutuamente exclusiva (sem sobreposição ou lacunas)
+Uniformidade: Cada partição representa um comportamento consistente do sistema
+Representatividade: Um valor por partição é suficiente para validar todo o comportamento
 
----
+📊 Classificação das Partições
+Por Tipo de Dados
 
-# Dia 1 – Equivalence Partitioning (Particionamento por Equivalência)
+Contínuas: Intervalos com qualquer valor decimal (ex: 1.5, 2.78, 3.14)
+Discretas: Valores específicos ou inteiros (ex: 0, 1, 2, 3)
 
-## O que é?
+Por Organização
 
-**Equivalence Partitioning** é uma técnica de design de testes onde o conjunto de dados de entrada (ou saída) é dividido em partições válidas e inválidas que se comportam da mesma forma. O objetivo é reduzir a quantidade de testes mantendo uma boa cobertura.
+Ordenadas: Possuem sequência lógica (ex: notas de 0 a 20, idades)
+Não ordenadas: Lista sem ordem específica (ex: tipos de conta: "normal", "premium", "vip")
 
-Cada partição representa um conjunto de dados que o sistema deve tratar da mesma forma — testar um valor de cada partição é suficiente para representar o comportamento de todos os outros da mesma partição.
+Por Limite
 
-**Carateristicas principais em resumo: 
-- Reduz casos de testes mantendo uma cobertura completa
-- Se um valor numa partição funciona, outros na mesma partição deverão funcionar de forma semelhante
-- As partições não devem sobrepor-se nem estar vazias
+Finitas: Conjunto com número limitado de elementos (ex: cores: vermelho, azul, verde)
+Infinitas: Conjunto teoricamente ilimitado (ex: números inteiros, idades)
 
----
-## Existem vários tipos de partiçoes
-- Com base no tipo de dados:
-      - Continuas: Valores que podem incluir qualquer ponto num intervalo (incluindo decimais)
-      - Discretas: valores que só podem conter pontos especificos
+Por Validade
 
-- Com base na organização:
-     - Ordenadas: Valores que seguem uma sequencia lógica ou hierarquica
-     - Não ordenadas: Valores sem sequencia natural
-       
-- Com base nos limites:
-     - Finitas: Conjunto limitado de valores possíveis
-     - Infinitas: Valores teoricamente ilimitados
-       
-- Com base na validade:
-     - Válidas: Valores de entrada que o sistema deve aceitar
-     - Inválidas: Valores de entrada que o sistema deve rejeitar
+Válidas: Dados que o sistema deve aceitar e processar
+Inválidas: Dados que o sistema deve rejeitar com tratamento de erro apropriado
 
----
-##Processo de Aplicação
-- Identificar Parâmetros de Entrada: Determinar todos os campos e parâmetros de entrada no sistema
-- Analisar Especificações: Rever os requisitos para compreender o comportamento esperado
-- Definir Partições: Dividir o domínio de entrada de cada parâmetro em partições válidas e inválidas
-- Selecionar Valores de Teste: Escolher um valor representativo de cada partição
-- Desenhar Casos de Teste: Criar testes utilizando estes valores representativos
-- Executar Testes: Executar os testes e documentar os resultados
-- Avaliar Cobertura: Calcular quantas partições foram testadas
+⚙️ Processo de Aplicação
+1. Identificação dos Parâmetros
 
----
+Catalogar todos os campos de entrada
+Identificar parâmetros de configuração relevantes
+Mapear dados de saída quando aplicável
 
-## Aplicação prática: Sistema de Caixa Multibanco
+2. Análise de Especificações
 
-### Cenário fictício: **Levantamento de dinheiro**
+Revisar requisitos funcionais
+Identificar regras de negócio
+Documentar validações esperadas
 
-O caixa multibanco permite que o utilizador levante valores entre **10 e 1000 unidades monetárias**, em múltiplos de 10.
+3. Definição de Partições
 
-### Regras de negócio:
+Criar partições válidas baseadas nos requisitos
+Identificar partições inválidas para casos de erro
+Garantir que não existam lacunas entre partições
 
-- Valor mínimo para levantamento: **10**
-- Valor máximo para levantamento: **1000**
-- Apenas são aceites valores múltiplos de **10**
-- A conta tem de ter saldo suficiente
+4. Seleção de Valores Representativos
 
----
+Escolher um valor típico de cada partição válida
+Selecionar valores que claramente violem as regras para partições inválidas
+Documentar a justificativa para cada escolha
 
-## Definição das Partições
+5. Design dos Casos de Teste
 
-### Partições Válidas:
-1. Valores entre 10 e 1000, múltiplos de 10  
-   - Exemplo: `10`, `100`, `990`, `1000`
+Criar casos de teste estruturados
+Definir dados de entrada, procedimentos e resultados esperados
+Incluir casos de teste para tratamento de erros
 
-### Partições Inválidas:
-2. Valores inferiores a 10  
-   - Exemplo: `0`, `5`, `9`
-3. Valores superiores a 1000  
-   - Exemplo: `1001`, `1500`
-4. Valores dentro do intervalo permitido, mas **não múltiplos de 10**  
-   - Exemplo: `15`, `123`, `999`
+6. Execução e Documentação
 
----
+Executar os testes de forma sistemática
+Registrar resultados detalhados
+Identificar e documentar defeitos encontrados
 
-## Casos de Teste Baseados nas Partições
+7. Avaliação de Cobertura
 
-| ID | Valor do Levantamento | Partição        | Resultado Esperado             |
-|----|------------------------|------------------|-------------------------------|
-| 01 | 100                    | Válida           | Levantamento autorizado       |
-| 02 | 5                      | Inválida (inferior ao mínimo) | Erro: valor inválido |
-| 03 | 1200                   | Inválida (superior ao máximo) | Erro: valor inválido |
-| 04 | 55                     | Inválida (não múltiplo de 10) | Erro: valor inválido |
+Verificar se todas as partições foram testadas
+Calcular percentual de cobertura
+Identificar gaps de cobertura
 
----
+📈 Quando Utilizar
+Cenários Ideais
 
-## Observações
+Formulários complexos com múltiplos campos de validação
+APIs com diversos parâmetros de entrada
+Sistemas de validação com regras bem definidas
+Interfaces com muitas opções de configuração
 
-- Neste cenário, cobrimos **todas as partições possíveis** de entrada para a funcionalidade de levantamento.
-- Cada partição foi representada por **um valor típico**, sem precisar testar todos os valores possíveis.
+Contextos Apropriados
 
----
+Especificações claras e bem documentadas
+Necessidade de otimização do esforço de teste
+Projetos com restrições de tempo e recursos
 
-## Reflexão
+✅ Vantagens
 
-- **Facilidade de aplicação:** O Particionamento por Equivalência revelou-se útil para reduzir o número de testes necessários.
-- **Limitação identificada:** A técnica não testa os valores nos limites exatos do intervalo — isso será abordado com a técnica *Boundary Value Analysis*.
-- **Próximo passo:** Aplicar **Boundary Value Analysis** amanhã, no mesmo cenário, para verificar os limites inferior e superior do intervalo permitido.
+Simplicidade: Técnica fácil de compreender e aplicar
+Eficiência: Redução significativa no número de testes
+Foco funcional: Concentra-se no comportamento real do sistema
+Automação: Fornece base sólida para testes automatizados
+Cobertura: Garante teste de todos os comportamentos principais
+Manutenibilidade: Facilita atualizações quando requisitos mudam
 
----
+⚠️ Limitações e Considerações
+Principais Limitações
 
-*Data de início:* 05/05/2025  
-*Autora:* Eurits
+Valores de fronteira: Não cobre adequadamente limites entre partições
+Dependência de especificações: Requer documentação clara e completa
+Interações complexas: Pode não detectar defeitos em combinações específicas
+Casos edge: Pode perder cenários extremos importantes
 
-# Dia 2 – Análise de Valores Limite (Boundary Value Analysis - BVA)
+Técnicas Complementares
 
-## 🧠 Objetivo
+Boundary Value Analysis: Para testar valores de fronteira
+Pairwise Testing: Para combinações de parâmetros
+Error Guessing: Para cenários não óbvios
 
-Este mini-treinamento tem como objetivo explorar a técnica **Boundary Value Analysis (Análise de Valores Limite - AVLim)** utilizada em testes de software para identificar erros nos limites dos domínios de entrada.
+🔧 Boas Práticas
+Durante o Design
 
----
+Revisar partições com stakeholders
+Documentar claramente os critérios de particionamento
+Validar a completude das partições
+Considerar casos de uso reais
 
-## 📘 Conceitos-Chave
+Durante a Execução
 
-### O que é a Análise de Valores Limite?
+Manter rastreabilidade entre partições e testes
+Registrar defeitos por partição
+Atualizar partições conforme evolução dos requisitos
 
-A Análise de Valores Limite (AVLim) é uma técnica de teste baseada no princípio de que **erros ocorrem com mais frequência nos limites dos intervalos válidos de entrada** do que no centro. 
+📚 Exemplo Prático
+Para um exemplo detalhado de aplicação, consulte: exemplos/caixa_multibanco_ep.md
+🔗 Integração com Outras Técnicas
+O Equivalence Partitioning funciona melhor quando combinado com:
 
-### Benefícios:
-
-✅ Mais eficiência nos testes  
-✅ Detecção de falhas críticas em condições de fronteira  
-✅ Aumento da robustez e fiabilidade do software
-
----
-
-## 🎯 Tipos de valores a testar
-
-- 🔹 **Valor limite mínimo**
-- 🔹 **Valor limite máximo**
-- 🔹 **Valor imediatamente abaixo do mínimo**
-- 🔹 **Valor imediatamente acima do mínimo**
-- 🔹 **Valor imediatamente abaixo do máximo**
-- 🔹 **Valor imediatamente acima do máximo**
-
----
-
-## 🧪 Exemplo prático
-
-> Um módulo de gravação aceita **números entre 10 e 500 (inclusive)**.
-
-### 🧩 Partições de equivalência:
-
-- ❌ Inválido: x < 10
-- ✅ Válido: 10 ≤ x ≤ 500
-- ❌ Inválido: x > 500
-
----
-
-## 🧰 Métodos de Análise
-
-### ✔️ Método de 2 Valores
-
-Foca-se apenas nos valores **fora e nos limites**.
-
-**Casos de Teste**:  
-- Inferior: `9` (fora), `10` (limite inferior)  
-- Superior: `500` (limite superior), `501` (fora)
-
-```text
-Testar: 9, 10, 500, 501
-
+Boundary Value Analysis para valores limítrofes
+Decision Table Testing para regras complexas
+State Transition Testing para sistemas com estados
+Use Case Testing para validação de cenários completos
