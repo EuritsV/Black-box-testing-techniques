@@ -1,4 +1,4 @@
-## 🔷 3. State Transition (Transição de Estado)
+## 🔷 4. State Transition (Transição de Estado)
 
 ### 📘 Definição
 Técnica que testa o comportamento do sistema com base em **diferentes estados e eventos**, simulando **fluxos e sequências**.
