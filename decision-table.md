@@ -1,4 +1,4 @@
-## 🔸 2. Decision Table (Tabela de Decisão)
+## 🔸 3. Decision Table (Tabela de Decisão)
 
 ### 📘 Definição
 Técnica utilizada para testar **múltiplas condições e combinações possíveis**, com base em regras de negócio.
