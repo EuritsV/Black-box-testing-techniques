@@ -1,4 +1,4 @@
-# Mini-Treinamento: Técnicas de Testes de Caixa Preta
+## 🔷 1. Equivalence Partitioning (Particionamento por Equivalência)
 
 ## Objetivo
 
