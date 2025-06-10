@@ -67,18 +67,20 @@ Este treino pode ser usado com:
 ---
 
 ## 📂 Estrutura recomendada do repositório
-.
-├── README.md
-├── equivalence-partitioning.md
-├── boundary-value-analysis.md
-├── decision-table.md
-├── state-transition.md
-└── exemplos/
-├── carrinho_ep.md
-├── formulario_idade_bva.md
-├── reservas_decision_table.md
-└── login_pin_state_transition.md
 
+### Arquivos principais (conteúdo das técnicas)
+
+- [`README.md`](README.md): Página inicial com visão geral do repositório
+- [`equivalence-partitioning.md`](equivalence-partitioning.md): Particionamento por equivalência
+- [`boundary-value-analysis.md`](boundary-value-analysis.md): Análise de valores limite
+- [`decision-table.md`](decision-table.md): Tabelas de decisão
+- [`state-transition.md`](state-transition.md): Testes por transição de estado
+
+### 📂 Pasta `exemplos/` (aplicações práticas)
+
+- [`carrinho_ep.md`](exemplos/carrinho_ep.md): Validação de quantidade em carrinho (EP)
+- [`formulario_idade_bva.md`](exemplos/formulario_idade_bva.md): Validação de idade (BVA)
+- [`reservas_decision_table.md
 
 ---
 
