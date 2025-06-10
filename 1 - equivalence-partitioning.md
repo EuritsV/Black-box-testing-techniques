@@ -14,66 +14,66 @@ Se um valor numa partição for processado corretamente, assume-se que os outros
 ### 📊 Classificação das Partições
 **Por Tipo de Dados**
 
-Contínuas: Intervalos com qualquer valor decimal (ex: 1.5, 2.78, 3.14)
-Discretas: Valores específicos ou inteiros (ex: 0, 1, 2, 3)
+- Contínuas: Intervalos com qualquer valor decimal (ex: 1.5, 2.78, 3.14)
+- Discretas: Valores específicos ou inteiros (ex: 0, 1, 2, 3)
 
 **Por Organização**
 
-Ordenadas: Possuem sequência lógica (ex: notas de 0 a 20, idades)
-Não ordenadas: Lista sem ordem específica (ex: tipos de conta: "normal", "premium", "vip")
+- Ordenadas: Possuem sequência lógica (ex: notas de 0 a 20, idades)
+- Não ordenadas: Lista sem ordem específica (ex: tipos de conta: "normal", "premium", "vip")
 
 **Por Limite**
 
-Finitas: Conjunto com número limitado de elementos (ex: cores: vermelho, azul, verde)
-Infinitas: Conjunto teoricamente ilimitado (ex: números inteiros, idades)
+- Finitas: Conjunto com número limitado de elementos (ex: cores: vermelho, azul, verde)
+- Infinitas: Conjunto teoricamente ilimitado (ex: números inteiros, idades)
 
 **Por Validade**
 
-Válidas: Dados que o sistema deve aceitar e processar
-Inválidas: Dados que o sistema deve rejeitar com tratamento de erro apropriado
+- Válidas: Dados que o sistema deve aceitar e processar
+- Inválidas: Dados que o sistema deve rejeitar com tratamento de erro apropriado
 
 ### ⚙️ Processo de Aplicação
 1. Identificação dos Parâmetros
 
-* Catalogar todos os campos de entrada
-* Identificar parâmetros de configuração relevantes
-* Mapear dados de saída quando aplicável
+Catalogar todos os campos de entrada
+Identificar parâmetros de configuração relevantes
+Mapear dados de saída quando aplicável
 
 2. Análise de Especificações
 
-* Revisar requisitos funcionais
-* Identificar regras de negócio
-* Documentar validações esperadas
+Revisar requisitos funcionais
+Identificar regras de negócio
+Documentar validações esperadas
 
 3. Definição de Partições
 
-* Criar partições válidas baseadas nos requisitos
-* Identificar partições inválidas para casos de erro
-* Garantir que não existam lacunas entre partições
+Criar partições válidas baseadas nos requisitos
+Identificar partições inválidas para casos de erro
+Garantir que não existam lacunas entre partições
 
 4. Seleção de Valores Representativos
 
-* Escolher um valor típico de cada partição válida
-* Selecionar valores que claramente violem as regras para partições inválidas
-* Documentar a justificativa para cada escolha
+Escolher um valor típico de cada partição válida
+Selecionar valores que claramente violem as regras para partições inválidas
+Documentar a justificativa para cada escolha
 
 5. Design dos Casos de Teste
 
-* Criar casos de teste estruturados
-* Definir dados de entrada, procedimentos e resultados esperados
-* Incluir casos de teste para tratamento de erros
+Criar casos de teste estruturados
+Definir dados de entrada, procedimentos e resultados esperados
+Incluir casos de teste para tratamento de erros
 
 6. Execução e Documentação
 
-* Executar os testes de forma sistemática
-* Registrar resultados detalhados
-* Identificar e documentar defeitos encontrados
+Executar os testes de forma sistemática
+Registrar resultados detalhados
+Identificar e documentar defeitos encontrados
 
 7. Avaliação de Cobertura
 
-* Verificar se todas as partições foram testadas
-* Calcular percentual de cobertura
-*Identificar gaps de cobertura
+Verificar se todas as partições foram testadas
+Calcular percentual de cobertura
+Identificar gaps de cobertura
 
 ## 📈 Quando Utilizar
 Cenários Ideais
