@@ -1,4 +1,4 @@
-## 🔹 1. Boundary Value Analysis (Análise de Valores Limite)
+## 🔹 2. Boundary Value Analysis (Análise de Valores Limite)
 
 ### 📘 Definição
 Técnica que testa os **valores nos limites** das partições válidas e inválidas, onde os erros ocorrem com mais frequência.
