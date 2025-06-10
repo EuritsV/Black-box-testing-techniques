@@ -47,33 +47,33 @@ Documentar validações esperadas
 
 3. Definição de Partições
 
-Criar partições válidas baseadas nos requisitos
-Identificar partições inválidas para casos de erro
-Garantir que não existam lacunas entre partições
+* Criar partições válidas baseadas nos requisitos
+* Identificar partições inválidas para casos de erro
+* Garantir que não existam lacunas entre partições
 
 4. Seleção de Valores Representativos
 
-Escolher um valor típico de cada partição válida
-Selecionar valores que claramente violem as regras para partições inválidas
-Documentar a justificativa para cada escolha
+* Escolher um valor típico de cada partição válida
+* Selecionar valores que claramente violem as regras para partições inválidas
+* Documentar a justificativa para cada escolha
 
 5. Design dos Casos de Teste
 
-Criar casos de teste estruturados
-Definir dados de entrada, procedimentos e resultados esperados
-Incluir casos de teste para tratamento de erros
+* Criar casos de teste estruturados
+* Definir dados de entrada, procedimentos e resultados esperados
+* Incluir casos de teste para tratamento de erros
 
 6. Execução e Documentação
 
-Executar os testes de forma sistemática
-Registrar resultados detalhados
-Identificar e documentar defeitos encontrados
+* Executar os testes de forma sistemática
+* Registrar resultados detalhados
+* Identificar e documentar defeitos encontrados
 
 7. Avaliação de Cobertura
 
-Verificar se todas as partições foram testadas
-Calcular percentual de cobertura
-Identificar gaps de cobertura
+* Verificar se todas as partições foram testadas
+* Calcular percentual de cobertura
+* Identificar gaps de cobertura
 
 ## 📈 Quando Utilizar
 Cenários Ideais
