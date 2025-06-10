@@ -11,7 +11,7 @@ Se um valor numa partição for processado corretamente, assume-se que os outros
 - Uniformidade: Cada partição representa um comportamento consistente do sistema
 - Representatividade: Um valor por partição é suficiente para validar todo o comportamento
 
-###📊 Classificação das Partições
+### 📊 Classificação das Partições
 **Por Tipo de Dados**
 
 Contínuas: Intervalos com qualquer valor decimal (ex: 1.5, 2.78, 3.14)
@@ -32,7 +32,7 @@ Infinitas: Conjunto teoricamente ilimitado (ex: números inteiros, idades)
 Válidas: Dados que o sistema deve aceitar e processar
 Inválidas: Dados que o sistema deve rejeitar com tratamento de erro apropriado
 
-###⚙️ Processo de Aplicação
+### ⚙️ Processo de Aplicação
 1. Identificação dos Parâmetros
 
 * Catalogar todos os campos de entrada
