@@ -2,7 +2,8 @@
 
 **Equivalence Partitioning** é uma técnica de design de testes que divide o conjunto de dados de entrada (ou saída) em partições válidas e inválidas, onde todos os valores de uma mesma partição são tratados de forma semelhante pelo sistema.
 O **objetivo** é reduzir significativamente a quantidade de testes mantendo uma cobertura funcional abrangente.
-##Princípio Fundamental
+
+### Princípio Fundamental
 Se um valor numa partição for processado corretamente, assume-se que os outros valores dessa partição também o serão, permitindo testar apenas um valor representativo por partição.
 ### 🎯 Características Principais
 
