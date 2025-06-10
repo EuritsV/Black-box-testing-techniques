@@ -91,20 +91,20 @@ Contextos Apropriados
 
 ✅ Vantagens
 
-1. Simplicidade: Técnica fácil de compreender e aplicar
-2. Eficiência: Redução significativa no número de testes
-3. Foco funcional: Concentra-se no comportamento real do sistema
-4. Automação: Fornece base sólida para testes automatizados
-5. Cobertura: Garante teste de todos os comportamentos principais
-6. Manutenibilidade: Facilita atualizações quando requisitos mudam
+* Simplicidade: Técnica fácil de compreender e aplicar
+* Eficiência: Redução significativa no número de testes
+* Foco funcional: Concentra-se no comportamento real do sistema
+* Automação: Fornece base sólida para testes automatizados
+* Cobertura: Garante teste de todos os comportamentos principais
+* Manutenibilidade: Facilita atualizações quando requisitos mudam
 
 ⚠️ Limitações e Considerações
 Principais Limitações
 
-1. Valores de fronteira: Não cobre adequadamente limites entre partições
-2. Dependência de especificações: Requer documentação clara e completa
-3. Interações complexas: Pode não detectar defeitos em combinações específicas
-4. Casos edge: Pode perder cenários extremos importantes
+* Valores de fronteira: Não cobre adequadamente limites entre partições
+* Dependência de especificações: Requer documentação clara e completa
+* Interações complexas: Pode não detectar defeitos em combinações específicas
+* Casos edge: Pode perder cenários extremos importantes
 
 Técnicas Complementares
 
