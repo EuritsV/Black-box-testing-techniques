@@ -71,8 +71,8 @@ Este treino pode ser usado com:
 ### Arquivos principais (conteúdo das técnicas)
 
 - [`README.md`](README.md): Página inicial com visão geral do repositório
-- [`equivalence-partitioning.md`](equivalence-partitioning.md): Particionamento por equivalência
-- [`boundary-value-analysis.md`](boundary-value-analysis.md): Análise de valores limite
+- [`equivalence-partitioning.md`](): Particionamento por equivalência
+- [`boundary-value-analysis.md`](#-1-equivalence-partitioning-particionamento-por-equival%C3%AAncia): Análise de valores limite
 - [`decision-table.md`](decision-table.md): Tabelas de decisão
 - [`state-transition.md`](state-transition.md): Testes por transição de estado
 
