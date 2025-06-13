@@ -71,10 +71,10 @@ Este treino pode ser usado com:
 ### Arquivos principais (conteúdo das técnicas)
 
 - [`README.md`](README.md): Página inicial com visão geral do repositório
-- [`equivalence-partitioning.md`](): Particionamento por equivalência
-- [`boundary-value-analysis.md`](#-1-equivalence-partitioning-particionamento-por-equival%C3%AAncia): Análise de valores limite
-- [`decision-table.md`](decision-table.md): Tabelas de decisão
-- [`state-transition.md`](state-transition.md): Testes por transição de estado
+- [`equivalence-partitioning.md`](https://github.com/EuritsV/Black-box-testing-techniques/blob/main/1%20-%20equivalence-partitioning.md#-1-equivalence-partitioning-particionamento-por-equival%C3%AAncia): Particionamento por equivalência
+- [`boundary-value-analysis.md`](https://github.com/EuritsV/Black-box-testing-techniques/blob/main/1%20-%20equivalence-partitioning.md#-1-equivalence-partitioning-particionamento-por-equival%C3%AAncia): Análise de valores limite
+- [`decision-table.md`](https://github.com/EuritsV/Black-box-testing-techniques/blob/main/3%20-%20decision-table.md#-3-decision-table-tabela-de-decis%C3%A3o): Tabelas de decisão
+- [`state-transition.md`](https://github.com/EuritsV/Black-box-testing-techniques/blob/main/4%20-%20state-transition.md#-4-state-transition-transi%C3%A7%C3%A3o-de-estado): Testes por transição de estado
 
 ### 📂 Pasta `exemplos/` (aplicações práticas) -> Em progresso, não finalizado
 
