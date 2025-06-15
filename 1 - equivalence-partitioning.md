@@ -150,7 +150,7 @@ O **Equivalence Partitioning** é essencial para otimizar testes, reduzir esfor�
 
 ---
 
-## 📚 Exemplo Prático: Módulo de Pagamento Online com Cartão de Crédito
+## 📚 Exemplo Prático 1 : Módulo de Pagamento Online com Cartão de Crédito
 
 ### Cenário
 
@@ -219,8 +219,139 @@ O utilizador selecionou "Cartão de Crédito" como método de pagamento. A tela 
 - **Entrada**: Dados válidos, saldo insuficiente
 - **Resultado Esperado**: Erro: "Transação negada"
 
+# 📚 Exemplo Prático 2 : Módulo de Levantamento de Dinheiro em Caixa Multibanco
+
+Vamos aplicar o **Equivalence Partitioning** a um cenário de levantamento de dinheiro em um caixa multibanco.
+
+---
+
+## 🖼️ Cenário
+
+Um utilizador deseja levantar dinheiro num caixa multibanco, que possui regras específicas sobre os valores mínimo, máximo e o número de operações diárias.
+
+### ✅ Pré-condição
+
+- O utilizador inseriu o cartão no caixa multibanco.
+- Digitou o código PIN.
+- Selecionou a opção de **"Levantamento"**.
+- Agora, precisa digitar o valor que deseja levantar.
+
+---
+
+## 📋 Regras de Negócio Relevantes
+
+- **Levantamento Mínimo**: €10 por operação  
+- **Levantamento Máximo por Operação**: €200  
+- **Levantamento Máximo Diário**: €400  
+- **Limitação adicional**: O valor de €400 diários pode ser atingido com um máximo de **duas operações de €200**.  
+  (Ou seja, não se pode levantar €400 de uma só vez, e se levantar €200 uma vez, só pode levantar mais €200 outra vez no mesmo dia)
+
+---
+
+## ⚙️ Processo de Particionamento por Equivalência
+
+### 1. Valor Solicitado para Levantamento
+
+#### ✅ Partição Válida
+
+Valores entre **€10 e €200**, inclusivamente, que respeitam os múltiplos de notas disponíveis.
+
+**Exemplos para teste**:  
+- €10  
+- €50  
+- €120  
+- €200  
+
+#### ❌ Partições Inválidas
+
+- Valor inferior a €10  
+  - Ex: €5, €0  
+- Valor superior a €400 (por operação)  
+  - Ex: €1000
+- Valor que não é múltiplo das notas disponíveis (ex: se só houver notas de €10 e €20)  
+  - Ex: €13, €25
+
+---
+
+### 2. Acumulação Diária de Levantamentos
+
+#### ✅ Partição Válida
+
+- **Primeira operação do dia**: qualquer valor entre €10 e €200  
+- **Segunda operação do dia**: valor que, somado ao levantamento anterior, **não exceda €400** e **seja ≤ €200**  
+  - Ex: Se já levantou €200, novo levantamento de €200 é válido (atinge os €400 permitidos)
+
+#### ❌ Partições Inválidas
+
+- Tentativa de levantamento **após atingir o limite diário de €400**  
+  - Ex: Após levantar €200 + €200, qualquer nova tentativa
+- Tentativa de terceira operação **independentemente do valor**, caso a regra limite a 2 operações máximas  
+  - Ex: Levantar €100 + €200, depois tentar mais €100 (total €400, mas terceira operação)
+
+> ⚠️ A interpretação da regra pode variar:
+> - Se for **"máximo de 2 levantamentos de €200"**, aplica-se a limitação por operação.
+> - Se for **"até €400 no total"**, desde que por operações de até €200, aceita-se outras combinações.
+
+---
+
+## 🧪 Casos de Teste (Exemplos)
+
+### CT1: Levantamento Válido (Primeira Operação)
+
+- **Entrada**: Valor solicitado = €50  
+- **Resultado Esperado**: Transação aprovada, dinheiro dispensado, limite diário atualizado (€350 restantes)
+
+---
+
+### CT2: Levantamento Válido (Máximo por Operação)
+
+- **Entrada**: Valor solicitado = €200  
+- **Resultado Esperado**: Transação aprovada, dinheiro dispensado, limite diário atualizado (€200 restantes)
+
+---
+
+### CT3: Levantamento Inválido (Abaixo do Mínimo)
+
+- **Entrada**: Valor solicitado = €5  
+- **Resultado Esperado**: Mensagem de erro: "Valor mínimo de levantamento é €10", transação não aprovada
+
+---
+
+### CT4: Levantamento Inválido (Acima do Máximo por Operação)
+
+- **Entrada**: Valor solicitado = €250  
+- **Resultado Esperado**: Mensagem de erro: "Valor máximo por operação é €200", transação não aprovada
+
+---
+
+### CT5: Levantamento Inválido (Excedendo Limite Diário – Segunda Operação)
+
+- **Pré-condição**: Utilizador já levantou €200 no dia  
+- **Entrada**: Novo valor solicitado = €250  
+- **Resultado Esperado**: Mensagem de erro: "Excedeu o limite diário de levantamento", transação não aprovada
+
+---
+
+### CT6: Levantamento Inválido (Tentativa de Terceira Operação)
+
+- **Pré-condição**: Utilizador já levantou €200 + €200 (duas operações)  
+- **Entrada**: Novo valor solicitado = €10  
+- **Resultado Esperado**: Mensagem de erro: "Limite diário de levantamento atingido", transação não aprovada
+
 ---
 
 ## ✅ Conclusão
+
+Este exemplo mostra como o **Equivalence Partitioning** pode ser aplicado não apenas a valores de entrada, mas também a **regras de negócio dependentes do estado do sistema** (como o limite diário de levantamentos).  
+
+Ao identificar partições válidas e inválidas com base nas regras, conseguimos garantir que o sistema:
+
+- **Aceite apenas operações permitidas**
+- **Rejeite solicitações que violam limites**
+- **Ofereça segurança e consistência ao utilizador final**
+
+---
+
+## ✅ 
 
 O Equivalence Partitioning é uma técnica essencial para qualquer QA que busca eficiência, clareza e eficácia na criação de casos de teste. Seu uso adequado melhora significativamente a qualidade do produto final.
