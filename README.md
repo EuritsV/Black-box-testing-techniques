@@ -2,13 +2,14 @@
 
 ## Introdução
 
-No universo dos testes de software, um dos maiores desafios é garantir uma cobertura abrangente sem cair na armadilha de testar exaustivamente todas as combinações possíveis – uma tarefa, na maioria das vezes, inviável. É aqui que entra as tecnicas de teste  **Equivalence Partitioning** (Particionamento por Equivalência), **Boundary Value Analysis** (Análise de Valores Limite), **Decision Table** (Tabela de Decisão), **State Transition** (Transição de Estado)  técnicas de design de testes poderosas e inteligentes.
+No universo dos testes de software, um dos maiores desafios é garantir uma cobertura abrangente sem cair na armadilha de testar exaustivamente todas as combinações possíveis – uma tarefa, na maioria das vezes, inviável. É aqui que entra as tecnicas de teste como:
 
 - Equivalence Partitioning (Particionamento por Equivalência)
 - Boundary Value Analysis (Análise de Valores Limite)
 - Decision Table (Tabela de Decisão)
 - State Transition (Transição de Estado)
 
+Técnicas de design de testes poderosas e inteligentes.
 ---
 
 ## 🎯 Objectivo
