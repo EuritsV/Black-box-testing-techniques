@@ -1,6 +1,8 @@
-# 🧪 Mini Treino: Técnicas de Teste Caixa Preta
+# 🧪 Mini manual: Técnicas de Teste Caixa Preta
 
-Este mini treino foi criado con intuito de compreender e aplicar quatro técnicas essenciais de design de testes **caixa preta**:
+## Introdução
+
+No universo dos testes de software, um dos maiores desafios é garantir uma cobertura abrangente sem cair na armadilha de testar exaustivamente todas as combinações possíveis – uma tarefa, na maioria das vezes, inviável. É aqui que entra as tecnicas de teste  **Equivalence Partitioning** (Particionamento por Equivalência), **Boundary Value Analysis** (Análise de Valores Limite), **Decision Table** (Tabela de Decisão), **State Transition** (Transição de Estado)  técnicas de design de testes poderosas e inteligentes.
 
 - Equivalence Partitioning (Particionamento por Equivalência)
 - Boundary Value Analysis (Análise de Valores Limite)
