@@ -1,188 +1,125 @@
-## 🔹 2. Boundary Value Analysis (Análise de Valores Limite)
-
+# 🔹 2. Análise de Valores Limite (Boundary Value Analysis - BVA)
 
 ## 📋 Definição
-
-**Boundary Value Analysis (BVA)** é uma técnica de design de testes que se concentra nos **valores nos limites e fronteiras** das partições válidas e inválidas. Esta técnica baseia-se na premissa de que a maioria dos erros de software ocorre nos limites dos domínios de entrada, onde as condições de fronteira são frequentemente mal implementadas.
+A **Boundary Value Analysis (BVA)** é uma técnica de design de testes que foca nos valores extremos (limites) das partições válidas e inválidas de um domínio de entrada. A premissa é que a maioria dos erros de software ocorre exatamente nessas fronteiras, onde as condições são frequentemente mal interpretadas ou implementadas.
 
 ### Princípio Fundamental
-Os defeitos tendem a concentrar-se nas fronteiras dos intervalos de dados, tornando essencial testar não apenas os valores limite, mas também os valores imediatamente adjacentes a essas fronteiras.
+Defeitos tendem a se concentrar nas fronteiras dos intervalos de dados. Por isso, é crucial testar não apenas os valores limite, mas também aqueles imediatamente adjacentes a essas fronteiras.
 
-## 🎯 Importância e Justificação
+## 🎯 Importância e Justificativa
 
 ### Por que os Limites são Críticos?
-- **Erros de implementação**: Programadores frequentemente cometem erros com operadores `<`, `<=`, `>`, `>=`
-- **Condições off-by-one**: Erros clássicos de indexação e contagem
-- **Validações incorretas**: Implementação inadequada de regras de negócio
-- **Overflow/Underflow**: Problemas com limites de tipos de dados
+- **Erros de implementação**: Programadores frequentemente erram ao usar operadores como `<`, `<=`, `>`, `>=`.
+- **Condições "off-by-one"**: Falhas clássicas de indexação e contagem (e.g., usar `n` em vez de `n-1` ou vice-versa).
+- **Validações incorretas**: Implementação inadequada de regras de negócio.
+- **Overflow/Underflow**: Problemas com os limites de tipos de dados numéricos.
 
 ### Estatísticas de Eficácia
-- Detecta aproximadamente **80% dos defeitos relacionados a limites**
-- Requer apenas **poucos casos de teste** por campo
-- **Alta relação custo-benefício** comparado a testes exaustivos
+- Detecta aproximadamente **80% dos defeitos** relacionados a limites.
+- Requer **poucos casos de teste por campo**.
+- Apresenta uma **alta relação custo-benefício** comparada a testes exaustivos.
 
 ## 🔧 Métodos de Aplicação
 
-### Método 2-BVA (Two-Point Boundary Value Analysis)
-Foca exclusivamente nos **valores mínimos e máximos** do intervalo.
+### 2-BVA (Two-Point Boundary Value Analysis)
+Foca nos valores mínimo e máximo do intervalo, além dos imediatamente adjacentes (um abaixo do mínimo e um acima do máximo).
 
-**Valores testados:**
-- Valor **abaixo do mínimo** (inválido)
-- Valor **no mínimo** (válido)
-- Valor **no máximo** (válido)  
-- Valor **acima do máximo** (inválido)
+**Exemplo** para um intervalo `[min, max]`: `min−1`, `min`, `max`, `max+1`.
 
-### Método 3-BVA (Three-Point Boundary Value Analysis)
-Expande a cobertura do 2-BVA adicionando valores **adjacentes aos limites**.
+### 3-BVA (Three-Point Boundary Value Analysis)
+Expande o 2-BVA, adicionando valores imediatamente adjacentes aos limites internos do intervalo.
 
-**Valores testados:**
-- Valor **abaixo do mínimo** (inválido)
-- Valor **no mínimo** (válido)
-- Valor **imediatamente acima do mínimo** (válido)
-- Valor **imediatamente abaixo do máximo** (válido)
-- Valor **no máximo** (válido)
-- Valor **acima do máximo** (inválido)
+**Exemplo** para um intervalo `[min, max]`: `min−1`, `min`, `min+1`, `max−1`, `max`, `max+1`.
 
-### Método Robusto BVA
-Inclui **múltiplos valores inválidos** em cada extremo para testar robustez do sistema.
+### BVA Robusto (Robust BVA)
+Inclui múltiplos valores inválidos em cada extremo para testar a **robustez e resiliência** do sistema a entradas inesperadas.
 
 ## ✅ Processo de Aplicação
 
 ### 1. Identificação de Intervalos
-- **Analisar especificações** para encontrar todos os campos com limites
-- **Catalogar tipos de dados** (inteiros, decimais, datas, strings)
-- **Identificar limites implícitos** (tamanhos de buffer, capacidades)
+- Analisar especificações para encontrar todos os campos com limites definidos.
+- Catalogar tipos de dados (inteiros, decimais, datas, strings, etc.).
+- Identificar limites implícitos (e.g., tamanho de buffer, capacidade de armazenamento).
 
 ### 2. Determinação de Valores Limite
-- **Limites explícitos**: Definidos nas especificações
-- **Limites de sistema**: Máximos de tipos de dados
-- **Limites de domínio**: Regras de negócio específicas
+- **Limites explícitos**: Definidos diretamente nas especificações.
+- **Limites de sistema**: Máximos/mínimos de tipos de dados (e.g., `MAX_INT`).
+- **Limites de domínio**: Regras de negócio específicas.
 
 ### 3. Seleção de Valores de Teste
-- **Valores válidos**: Nos limites e adjacentes
-- **Valores inválidos**: Fora dos limites
-- **Valores especiais**: Zero, null, vazio, máximos de sistema
+- **Valores válidos**: Nos limites e adjacentes (e.g., `min`, `min+1`, `max−1`, `max`).
+- **Valores inválidos**: Fora dos limites (e.g., `min−1`, `max+1`).
+- **Valores especiais**: Zero, nulo, vazio, extremos do sistema.
 
 ### 4. Design dos Casos de Teste
-- **Estruturar casos** com dados de entrada, procedimentos e resultados esperados
-- **Incluir validações** para comportamentos de erro
-- **Documentar justificativas** para cada valor escolhido
+- Estruturar casos de teste com dados de entrada, procedimentos e resultados esperados.
+- Incluir validações para comportamentos de erro (e.g., mensagens de erro esperadas).
+- Documentar as justificativas para cada valor escolhido.
 
 ### 5. Execução e Validação
-- **Testar sistematicamente** cada valor
-- **Verificar mensagens de erro** apropriadas
-- **Validar comportamento** nos limites válidos
+- Testar sistematicamente cada valor limite.
+- Verificar mensagens de erro apropriadas para entradas inválidas.
+- Validar comportamento do sistema para entradas nos limites válidos.
 
-## 📊 Tipos de Limites
+## 📊 Tipos de Limites Comuns
 
-### Limites Numéricos
-- **Inteiros**: 0, 1, -1, MAX_INT, MIN_INT
-- **Decimais**: 0.0, 0.1, -0.1, valores de precisão
-- **Percentuais**: 0%, 1%, 99%, 100%, 101%
-
-### Limites de String
-- **Comprimento**: String vazia, 1 caractere, máximo permitido
-- **Caracteres especiais**: Início/fim com espaços, caracteres unicode
-- **Formato**: Padrões de email, telefone, códigos
-
-### Limites Temporais
-- **Datas**: 01/01/1900, 31/12/2099, anos bissextos
-- **Horários**: 00:00:00, 23:59:59, mudanças de fuso
-- **Períodos**: Durações mínimas/máximas
-
-### Limites de Sistema
-- **Memória**: Buffers pequenos/grandes
-- **Rede**: Timeouts, largura de banda
-- **Arquivos**: Tamanhos mínimos/máximos
+- **Numéricos**: `0`, `1`, `-1`, `MAX_INT`, `MIN_INT`, `0.0`, `0.1`, `-0.1`, `0%`, `100%`, `101%`.
+- **Strings**: Vazia, 1 caractere, comprimento máximo permitido, caracteres especiais (espaços, Unicode), padrões (e-mail, telefone).
+- **Temporais**: Datas (`01/01/1900`, `31/12/2099`, anos bissextos), horários (`00:00:00`, `23:59:59`), mudanças de fuso.
+- **Sistema**: Memória (buffers pequenos/grandes), rede (timeouts, largura de banda), arquivos (tamanhos extremos).
 
 ## ✅ Vantagens
 
-### Eficácia
-- **Alta detecção de defeitos** com poucos testes
-- **Foco nas áreas mais propensas** a erros
-- **Cobertura sistemática** de todas as fronteiras
-
-### Eficiência
-- **Redução significativa** no número de testes
-- **Fácil automação** e manutenção
-- **ROI elevado** comparado a outras técnicas
-
-### Aplicabilidade
-- **Ideal para campos numéricos** com intervalos bem definidos
-- **Compatível com automação** de testes
-- **Integração natural** com Equivalence Partitioning
+- **Eficácia**: Alta detecção de defeitos com número reduzido de testes.
+- **Eficiência**: Redução significativa no número de testes, fácil automação e manutenção, alto ROI.
+- **Aplicabilidade**: Ideal para campos numéricos com intervalos bem definidos.
 
 ## ⚠️ Limitações e Considerações
 
-### Principais Limitações
-- **Dependência de especificações claras** dos limites
-- **Não cobre lógica interna** complexa do sistema
-- **Inadequada para fluxos** de estados complexos
-- **Pode perder defeitos** em combinações de parâmetros
+- **Dependência**: Requer especificações claras e bem definidas.
+- **Não aborda**: Lógica interna complexa ou fluxos de estado complexos.
+- **Perda de Defeitos**: Pode não identificar defeitos que surgem da combinação de múltiplos parâmetros.
+- **Contextos menos apropriados**: Sistemas com lógica qualitativa, múltiplos componentes ou regras não baseadas em limites.
 
-### Contextos Menos Apropriados
-- Sistemas com **lógica predominantemente qualitativa**
-- **Fluxos de trabalho** complexos
-- **Interações** entre múltiplos componentes
-- **Regras de negócio** não baseadas em limites
+## 💡 Exemplo Prático Detalhado: Campo "Idade" para Sistema de Seguros
 
-## 💡 Exemplo Prático Detalhado
+**Intervalo válido:** 18 a 65 anos
 
-### Cenário: Campo "Idade" para Sistema de Seguros
-**Intervalo válido**: 18 a 65 anos
+| Valor | Classificação                 | Objetivo do Teste                            | Resultado Esperado                        |
+|-------|-------------------------------|----------------------------------------------|-------------------------------------------|
+| 17    | Inválido (abaixo do mínimo)   | Testar rejeição abaixo do limite inferior    | Erro: "Idade mínima é 18 anos"            |
+| 18    | Válido (limite inferior)      | Validar aceitação no limite mínimo           | Aceito - processa normalmente             |
+| 19    | Válido (acima do mínimo)      | Confirmar aceitação próximo ao limite        | Aceito - processa normalmente             |
+| 64    | Válido (abaixo do máximo)     | Confirmar aceitação próximo ao limite        | Aceito - processa normalmente             |
+| 65    | Válido (limite superior)      | Validar aceitação no limite máximo           | Aceito - processa normalmente             |
+| 66    | Inválido (acima do máximo)    | Testar rejeição acima do limite superior     | Erro: "Idade máxima é 65 anos"            |
 
-| Valor | Classificação | Objetivo do Teste | Resultado Esperado |
-|-------|---------------|-------------------|-------------------|
-| 17    | Inválido (abaixo) | Testar rejeição abaixo do mínimo | Erro: "Idade mínima é 18 anos" |
-| 18    | Válido (limite inferior) | Validar aceitação no mínimo | Aceito - processa normalmente |
-| 19    | Válido (acima do mínimo) | Confirmar valores próximos ao limite | Aceito - processa normalmente |
-| 64    | Válido (abaixo do máximo) | Confirmar valores próximos ao limite | Aceito - processa normalmente |
-| 65    | Válido (limite superior) | Validar aceitação no máximo | Aceito - processa normalmente |
-| 66    | Inválido (acima) | Testar rejeição acima do máximo | Erro: "Idade máxima é 65 anos" |
-
-### Casos de Teste Adicionais
-- **0**: Teste de valor zero
-- **-1**: Teste de valor negativo
-- **999**: Teste de valor extremamente alto
-- **Null/Vazio**: Teste de valores ausentes
+**Casos de Teste Adicionais (para robustez):**
+- `0`: Testar valor zero.
+- `-1`: Testar valor negativo.
+- `999`: Testar valor extremamente alto.
+- `Null`/`Vazio`: Testar valores ausentes ou nulos.
 
 ## 🔗 Integração com Outras Técnicas
 
-### Complementaridade com Equivalence Partitioning
-- **EP**: Define as partições
-- **BVA**: Testa os limites das partições
-- **Combinação**: Cobertura completa e eficiente
-
-### Uso com Decision Tables
-- **Limites como condições** nas tabelas de decisão
-- **Combinações de limites** para regras complexas
-- **Validação de múltiplos parâmetros** simultaneamente
-
-### Aplicação em Testes Automatizados
-- **Parametrização fácil** de valores limite
-- **Execução repetível** e consistente
-- **Integração em pipelines** de CI/CD
+- **Equivalence Partitioning (EP)**: Define as partições e a BVA testa seus limites — combinação eficiente.
+- **Decision Tables**: Representa limites como condições em regras complexas.
+- **Testes Automatizados**: Permite parametrização de limites, execução repetível e integração com CI/CD.
 
 ## 🛠️ Ferramentas e Implementação
 
 ### Estratégias de Automação
-- **Data-driven testing** com valores limite pré-definidos
-- **Geração automática** de casos de teste
-- **Validação automática** de mensagens de erro
+- **Data-driven testing**: Usar dados pré-definidos de valores limite.
+- **Geração automática**: Ferramentas que criam testes a partir de limites.
+- **Validação automática**: Verificação programática de mensagens de erro e comportamentos.
 
 ### Documentação e Rastreabilidade
-- **Matriz de cobertura** de limites testados
-- **Mapeamento requisitos-limites-testes**
-- **Relatórios de execução** detalhados
+- **Matriz de cobertura**: Acompanhamento de limites testados.
+- **Mapeamento**: Rastreio de requisitos, limites e casos de teste.
+- **Relatórios**: Geração de documentação detalhada.
 
 ## 📈 Métricas e Avaliação
 
-### Indicadores de Cobertura
-- **Percentual de limites testados**
-- **Número de defeitos encontrados por limite**
-- **Tempo de execução por caso de teste**
+- **Indicadores de Cobertura**: Percentual de limites identificados/testados, número de defeitos por limite, tempo de execução.
+- **Critérios de Sucesso**: Todos os limites testados, comportamentos de erro validados, performance aceitável nos valores limite.
 
-### Critérios de Sucesso
-- **Todos os limites identificados** foram testados
-- **Comportamentos de erro** validados adequadamente
-- **Performance aceitável** nos valores limite
