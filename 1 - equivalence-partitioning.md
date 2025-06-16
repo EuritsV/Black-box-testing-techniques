@@ -1,9 +1,5 @@
 # 🔷 1. Equivalence Partitioning (Particionamento por Equivalência)
 
-## Introdução
-
-No universo dos testes de software, um dos maiores desafios é garantir uma cobertura abrangente sem cair na armadilha de testar exaustivamente todas as combinações possíveis – uma tarefa, na maioria das vezes, inviável. É aqui que entra o **Equivalence Partitioning** (Particionamento por Equivalência), uma técnica de design de testes poderosa e inteligente.
-
 ## O que é?
 
 É uma técnica que divide o conjunto de dados de entrada (ou, em alguns casos, de saída) em grupos, ou "partições", de forma que todos os valores dentro de uma mesma partição sejam tratados de maneira idêntica pelo sistema.
