@@ -1,4 +1,4 @@
-# 🧭 4. State Transition (Transição de Estado)
+# 🔸 4. State Transition (Transição de Estado)
 
 ## 📋 Definição
 
