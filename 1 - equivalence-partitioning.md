@@ -188,8 +188,8 @@ O utilizador selecionou "Cartão de Crédito" como método de pagamento. A tela 
 
 ### 5. Valor Disponível no Cartão
 
-- **Válido**: Valor ≥ valor da compra (ex: compra = R$100, limite = R$150)
-- **Inválido**: Valor < valor da compra (ex: limite = R$50)
+- **Válido**: Valor ≥ valor da compra (ex: compra = €100, limite = €150)
+- **Inválido**: Valor < valor da compra (ex: limite = €50
 
 ---
 
