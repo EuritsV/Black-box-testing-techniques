@@ -230,7 +230,7 @@ Um utilizador deseja levantar dinheiro num caixa multibanco, que possui regras e
 - O utilizador inseriu o cartão no caixa multibanco.
 - Digitou o código PIN.
 - Selecionou a opção de **"Levantamento"**.
-- Agora, precisa digitar o valor que deseja levantar.
+- Agora, precisa inserir o montante que deseja levantar.
 
 ---
 
